@@ -1,0 +1,19 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "palette": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "prefix": "--pf-t-",
+      "separator": "%",
+      "files": [{
+        "destination": "_variables.css",
+        "format": "css/variables",
+        "options": {
+          "outputReferences": true
+        }
+      }
+    ]
+    }
+  }
+}
