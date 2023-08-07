@@ -1,12 +1,10 @@
 {
-    "globaldark": {
-      "mode":"dark",
+    "global": {
       "color": {
         "gray": {
           "100": {
             "type": "color",
-            "value": "{color.gray.300}",
-            "mode": "dark"
+            "value": "{color.gray.300}"
           },
           "200": {
             "type": "color",

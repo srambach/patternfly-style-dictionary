@@ -8,7 +8,7 @@ Right now, only exporting from Figma is working - importing causes a memory erro
 1. To correct the delimiters:
   - replace "-" with "--"
   - replace "----pf--t--" with "--pf-t-"
-  - replace "--on" with "-on"
+  - replace "--on--" with "--on-"
   
 Long term, we should be able to write our own formatter to create the variable names correctly.
 
