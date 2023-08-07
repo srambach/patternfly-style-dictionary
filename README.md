@@ -1,17 +1,20 @@
 # Patternfly customizations and notes
 
+Right now, only exporting from Figma is working - importing causes a memory error.
 1. Output variables from Figma using the export plugin, and put into AsExported.text
 1. Copy modes (marked with comments) into separate token .json files. This isn't technically necessary but is more organized.
+1. $type and $value have to have the $ removed for style-dictionary. However, this is the draft W3C recommendation, so style-dictionary should handle this soon if it doesn't already
 1. Run style dictionary - does a deep merge of all tokens and generates one file. To generate individual files, we will need to use filters. Theo creates separate files and this feature is requested for style dictionary as well. *It's unclear currently what to filter on to create the structure we want.*
 1. To correct the delimiters:
   - replace "-" with "--"
   - replace "----pf--t--" with "--pf-t-"
   - replace "--on" with "-on"
   
-Long term, we should be able to write our own formatter to create the variable names correctly
+Long term, we should be able to write our own formatter to create the variable names correctly.
 
-If configured, we can generate the palette colors into their own file by only processing that .json file, but the others will fail if you try to do them on their own because tokens are undefined.
+If configured, we can generate the palette colors into their own file by only processing that .json file, but the base and semantic tokens will fail if you try to do them on their own because they point to tokens that are undefined.
 
+Dark tokens can't be processed at the same time because their names conflict. We'll either need to put "dark" into the token hierarchy or generate them separately.
 
 # Basic Style Dictionary
 
