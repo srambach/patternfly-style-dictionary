@@ -1,3 +1,14 @@
+# Patternfly customizations and notes
+
+1. Output variables from Figma using the export plugin, and put into AsExported.text
+1. Copy modes (marked with comments) into separate token .json files. This isn't technically necessary but is more organized.
+1. Run style dictionary - does a deep merge of all tokens and generates one file. To generate individual files, we will need to use filters. Theo creates separate files and this feature is requested for style dictionary as well. *It's unclear currently what to filter on to create the structure we want.*
+1. To correct the delimiters:
+  - replace "-" with "--"
+  - replace "----pf--t--" with "--pf-t-"
+  - replace "--on" with "-on"
+Long term, we should be able to write our own formatter to create the variable names correctly
+
 # Basic Style Dictionary
 
 This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
