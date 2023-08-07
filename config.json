@@ -6,7 +6,7 @@
       "buildPath": "build/css/",
       "prefix": "--pf-t-",
       "files": [{
-        "destination": "_variables.css",
+        "destination": "_variables-light.css",
         "format": "css/variables",
         "options": {
           "outputReferences": true

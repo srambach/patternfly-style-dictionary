@@ -7,7 +7,11 @@
   - replace "-" with "--"
   - replace "----pf--t--" with "--pf-t-"
   - replace "--on" with "-on"
+  
 Long term, we should be able to write our own formatter to create the variable names correctly
+
+If configured, we can generate the palette colors into their own file by only processing that .json file, but the others will fail if you try to do them on their own because tokens are undefined.
+
 
 # Basic Style Dictionary
 
