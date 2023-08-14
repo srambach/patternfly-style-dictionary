@@ -1,19 +1,19 @@
 {
-  "source": ["tokens/dark/*.json"],
+  "source": ["tokens/default/*.json"],
   "platforms": {
     "css": {
       "transformGroup": "css",
       "buildPath": "build/css/",
-      "prefix": "--pf-t-dark-",
+      "prefix": "--pf-t-",
       "files": [{
-        "destination": "_tokens-dark.css",
+        "destination": "_tokens-palette.css",
         "format": "css/variables",
         "options": {
           "outputReferences": true
         },
         "filter": {
           "attributes": {
-            "category": "global"
+            "category": "color"
           }
         }
       }

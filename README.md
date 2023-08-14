@@ -3,18 +3,26 @@
 Right now, only exporting from Figma is working - importing causes a memory error.
 1. Output variables from Figma using the export plugin, and put into AsExported.text
 1. Copy modes (marked with comments) into separate token .json files. This isn't technically necessary but is more organized.
-1. $type and $value have to have the $ removed for style-dictionary. However, this is the draft W3C recommendation, so style-dictionary should handle this soon if it doesn't already
-1. Run style dictionary - does a deep merge of all tokens and generates one file. To generate individual files, we will need to use filters. Theo creates separate files and this feature is requested for style dictionary as well. *It's unclear currently what to filter on to create the structure we want.*
+1. `$type` and `$value` have to have the `$` removed for style-dictionary. However, this is the draft W3C recommendation, so style-dictionary should handle this soon if it doesn't already
+1. Run style dictionary (`style-dictionary build`) - does a deep merge of all tokens and generates one file. Run build 3 times, with each of the config files listed below.
+NOTE: To generate individual files, we will need to use filters. Theo creates separate files and this feature is requested for style dictionary as well. **It's unclear currently what to filter on to create the structure we want.**
+
+    - Currently there are 3 config.json files - one for palette colors, one for default tokens, and one for dark tokens.
+    - The palette config filters to just export the palette colors to _tokens-palette.css
+    - The default config filters to export just tokens starting with global (excluding palette colors) into _tokens-default.css
+    - The dark config filters to export just tokens starting wth global (excluding palette colors) AND it adds "dark" into the prefix. **We need to put this into figma because now dark semantic tokens aren't pointing to dark base tokens**
+
 1. To correct the delimiters:
-  - replace "-" with "--"
-  - replace "----pf--t--" with "--pf-t-"
-  - replace "--on--" with "--on-"
+  - replace `-` with `--`
+  - replace `----pf--t--` with `--pf-t-`
+  - replace `--on--` with `--on-`
   
 Long term, we should be able to write our own formatter to create the variable names correctly.
 
-If configured, we can generate the palette colors into their own file by only processing that .json file, but the base and semantic tokens will fail if you try to do them on their own because they point to tokens that are undefined.
-
-Dark tokens can't be processed at the same time because their names conflict. We'll either need to put "dark" into the token hierarchy or generate them separately.
+**NOTE:** Dark tokens can't be processed at the same time because their names conflict. We'll either need to put "dark" into the token hierarchy or generate them separately.
+- 8/7/23 decision with Coker and Lucia - add dark wrapping dark tokens to generate `--pf-t--dark--`. **Problem - values are not updated to include dark**
+- Also, we need to decide about versioning tokens at some point. We probably will, but maybe a separate stream from PF versions?
+- Generate tokens in one file for now and we'll figure out later how to filter them into layers (and sort them logically). Base have 100-200-300 names but semantic don't.
 
 # Basic Style Dictionary
 
