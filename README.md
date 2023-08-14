@@ -8,9 +8,9 @@ Right now, only exporting from Figma is working - importing causes a memory erro
 NOTE: To generate individual files, we will need to use filters. Theo creates separate files and this feature is requested for style dictionary as well. **It's unclear currently what to filter on to create the structure we want.**
 
     - Currently there are 3 config.json files - one for palette colors, one for default tokens, and one for dark tokens.
-    - The palette config filters to just export the palette colors to _tokens-palette.css
-    - The default config filters to export just tokens starting with global (excluding palette colors) into _tokens-default.css
-    - The dark config filters to export just tokens starting wth global (excluding palette colors) AND it adds "dark" into the prefix. **We need to put this into figma because now dark semantic tokens aren't pointing to dark base tokens**
+    - The palette config filters to just export the palette colors to `_tokens-palette.scss`
+    - The default config filters to export just tokens starting with global (excluding palette colors) into `_tokens-default.scss`
+    - The dark config filters to export (to `_tokens-dark.scss`) just tokens starting wth global (excluding palette colors) AND it adds "dark" into the prefix. **We need to put this into figma because now dark semantic tokens aren't pointing to dark base tokens**
 
 1. To correct the delimiters:
   - replace `-` with `--`
@@ -19,8 +19,9 @@ NOTE: To generate individual files, we will need to use filters. Theo creates se
   
 Long term, we should be able to write our own formatter to create the variable names correctly.
 
-**NOTE:** Dark tokens can't be processed at the same time because their names conflict. We'll either need to put "dark" into the token hierarchy or generate them separately.
+**NOTE:** Dark semantic tokens can't be processed at the same time because their names conflict. ~~We'll either need to put "dark" into the token hierarchy or generate them separately.~~
 - 8/7/23 decision with Coker and Lucia - add dark wrapping dark tokens to generate `--pf-t--dark--`. **Problem - values are not updated to include dark**
+- 8/14/23 Lucia added /global/dark/.. to dark base tokens so they get names unique from the default ones. We can't do that with dark semantic because they need to be two modes in Figma.
 - Also, we need to decide about versioning tokens at some point. We probably will, but maybe a separate stream from PF versions?
 - Generate tokens in one file for now and we'll figure out later how to filter them into layers (and sort them logically). Base have 100-200-300 names but semantic don't.
 
