@@ -21,6 +21,7 @@ NOTE: To generate individual files, we will need to use filters. Theo creates se
     1. replace `-` with `--`
     1. replace `----pf--t--` with `--pf-t-`
     1. replace `--on--` with `--on-`
+    1. **TODO: Dimensions need to have px appended**
   
 Long term, we should be able to write our own formatter to create the variable names correctly.
 
