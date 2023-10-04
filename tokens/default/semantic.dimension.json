@@ -1,26 +1,32 @@
 {
   "global": {
-    "icon": {
-      "size": {
-        "xl": {
-          "type": "number",
-          "value": "{global.icon.size.400}"
-        },
-        "lg": {
-          "type": "number",
-          "value": "{global.icon.size.300}"
-        },
-        "md": {
-          "type": "number",
-          "value": "{global.icon.size.200}"
-        },
-        "sm": {
-          "type": "number",
-          "value": "{global.icon.size.100}"
-        }
-      }
-    },
     "border": {
+      "radius": {
+        "sharp": {
+          "type": "number",
+          "value": "{global.border.radius.0}"
+        },
+        "small": {
+          "type": "number",
+          "value": "{global.border.radius.200}"
+        },
+        "large": {
+          "type": "number",
+          "value": "{global.border.radius.400}"
+        },
+        "medium": {
+          "type": "number",
+          "value": "{global.border.radius.300}"
+        },
+        "tiny": {
+          "type": "number",
+          "value": "{global.border.radius.100}"
+        },
+        "pill": {
+          "type": "number",
+          "value": "{global.border.radius.500}"
+        }
+      },
       "width": {
         "button": {
           "active": {
@@ -64,27 +70,25 @@
             "value": "{global.border.width.100}"
           }
         }
-      },
-      "radius": {
-        "small": {
+      }
+    },
+    "icon": {
+      "size": {
+        "xl": {
           "type": "number",
-          "value": "{global.border.radius.200}"
+          "value": "{global.icon.size.400}"
         },
-        "large": {
+        "lg": {
           "type": "number",
-          "value": "{global.border.radius.400}"
+          "value": "{global.icon.size.300}"
         },
-        "medium": {
+        "md": {
           "type": "number",
-          "value": "{global.border.radius.300}"
+          "value": "{global.icon.size.200}"
         },
-        "tiny": {
+        "sm": {
           "type": "number",
-          "value": "{global.border.radius.100}"
-        },
-        "pill": {
-          "type": "number",
-          "value": "{global.border.radius.500}"
+          "value": "{global.icon.size.100}"
         }
       }
     },

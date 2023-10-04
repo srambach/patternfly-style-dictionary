@@ -263,6 +263,10 @@
             "type": "color",
             "value": "{color.gray.900}"
           },
+          "400": {
+            "type": "color",
+            "value": "{color.orangered.300}"
+          },
           "link": {
             "100": {
               "type": "color",
@@ -296,6 +300,10 @@
           "400": {
             "type": "color",
             "value": "{color.gray.100}"
+          },
+          "500": {
+            "type": "color",
+            "value": "rgba(21, 21, 21, 0.8000)"
           },
           "highlight": {
             "100": {
